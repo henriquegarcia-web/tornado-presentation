@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Screen } from '@/utils/styles/globals'
-import { Form as FormAntd } from 'antd'
 
 const formHeader = '80px'
 const formFooter = '70px'
@@ -73,7 +72,7 @@ export const FormProgressbarFile = styled.div<{ width: number }>`
   background-color: orangered;
 `
 
-export const Form = styled(FormAntd)`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   row-gap: 25px;

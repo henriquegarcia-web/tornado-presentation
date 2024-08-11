@@ -63,7 +63,7 @@ const FormScreen = ({}: IFormScreen) => {
           <span>🌋</span>
         </S.FormProgressbarWrapper>
       </S.FormHeader>
-      <S.Form onFinish={handleSubmit(onSubmit)}>
+      <S.Form onSubmit={handleSubmit(onSubmit)}>
         {questionsData.map((question) => (
           <S.FormWrapper key={question.questionId}>
             <S.FormWrapperLabel>{question.questionLabel}</S.FormWrapperLabel>
