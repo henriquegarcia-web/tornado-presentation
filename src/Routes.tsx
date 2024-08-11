@@ -8,12 +8,12 @@ const AppRoutes = () => {
       <Routes>
         {/* =============================================================== */}
 
-        <Route path="/" element={<Navigate to="/formulario" />} />
-        <Route path="*" element={<Navigate to="/formulario" />} />
+        <Route path="/" element={<Navigate to="/forms" />} />
+        <Route path="*" element={<Navigate to="/forms" />} />
 
         {/* =============================================================== */}
 
-        <Route path="/formulario" element={<FormScreen />} />
+        <Route path="/forms" element={<FormScreen />} />
 
         {/* =============================================================== */}
       </Routes>
