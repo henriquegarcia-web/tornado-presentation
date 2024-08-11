@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import * as S from './styles'
@@ -14,17 +15,38 @@ interface FormValues {
 interface IFormScreen {}
 
 const FormScreen = ({}: IFormScreen) => {
-  const { control, handleSubmit } = useForm<FormValues>()
+  const { control, handleSubmit, watch } = useForm<FormValues>()
   const navigate = useNavigate()
+
+  const [filledQuestionsCount, setFilledQuestionsCount] = useState(0)
+
+  const formValues = watch()
+
+  useEffect(() => {
+    const filledCount = Object.values(formValues).filter(Boolean).length
+    setFilledQuestionsCount(filledCount)
+  }, [formValues])
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data)
-    // navigate('/resultado')
+    // navigate('/resultado');
   }
+
+  const progressPercentage = (filledQuestionsCount / questionsData.length) * 100
 
   return (
     <S.FormScreen>
-      <S.FormHeader>Barra de Progresso Aqui</S.FormHeader>
+      <S.FormHeader>
+        <h1>Questionário sobre Vulcões</h1>
+
+        <S.FormProgressbarWrapper>
+          <span>🗻</span>
+          <S.FormProgressbar>
+            <S.FormProgressbarFile width={progressPercentage} />
+          </S.FormProgressbar>
+          <span>🌋</span>
+        </S.FormProgressbarWrapper>
+      </S.FormHeader>
       <S.Form onFinish={handleSubmit(onSubmit)}>
         {questionsData.map((question) => (
           <S.FormWrapper key={question.questionId}>
@@ -46,9 +68,9 @@ const FormScreen = ({}: IFormScreen) => {
           </S.FormWrapper>
         ))}
         <S.FormFooter>
-          <Button type="primary" htmlType="submit">
-            Enviar
-          </Button>
+          <S.FormSubmitButton type="submit">
+            Enviar 🔥 e ver resultado ✅
+          </S.FormSubmitButton>
         </S.FormFooter>
       </S.Form>
     </S.FormScreen>

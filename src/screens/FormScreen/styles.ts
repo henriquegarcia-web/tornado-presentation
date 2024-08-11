@@ -24,27 +24,68 @@ export const FormHeader = styled.header`
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 8px;
   width: 100%;
   height: ${formHeader};
 
-  font-size: 24px;
-
   background-color: #010a1a;
   border-bottom: 1px solid #020e24;
+
+  h1 {
+    font-size: 20px;
+  }
+`
+
+export const FormProgressbarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  width: 80%;
+  max-width: 420px;
+
+  span {
+    font-size: 16px;
+    line-height: 16px;
+  }
+`
+
+export const FormProgressbar = styled.div`
+  display: flex;
+  width: 100%;
+  height: 6px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 6px;
+
+  background-color: rgba(255, 255, 255, 0.15);
+`
+
+export const FormProgressbarFile = styled.div<{ width: number }>`
+  display: flex;
+  width: ${({ width }) => `${width}%`};
+  height: 100%;
+  border-radius: 50px;
+  transition: 0.3s;
+
+  background-color: orangered;
 `
 
 export const Form = styled(FormAntd)`
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 25px;
 `
 
 export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
   .ant-radio-group {
     display: flex;
@@ -56,6 +97,7 @@ export const FormWrapper = styled.div`
         font-size: 14px;
         line-height: 14px;
         font-weight: 400;
+        letter-spacing: 0.5px;
 
         color: rgb(230, 230, 230);
       }
@@ -67,6 +109,7 @@ export const FormWrapperLabel = styled.label`
   font-size: 18px;
   line-height: 18px;
   font-weight: 500;
+  letter-spacing: 0.5px;
 
   color: white;
 `
@@ -84,4 +127,22 @@ export const FormFooter = styled.footer`
 
   background-color: #010a1a;
   border-top: 1px solid #020e24;
+`
+
+export const FormSubmitButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 20px;
+  border-radius: 6px;
+
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+
+  background-color: orangered;
+  color: white;
+  border: 2px solid orangered;
 `
