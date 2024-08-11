@@ -137,6 +137,8 @@ export const FormSubmitButton = styled.button`
   height: fit-content;
   padding: 10px 20px;
   border-radius: 6px;
+  transition: 0.3s;
+  cursor: pointer;
 
   font-size: 16px;
   line-height: 16px;
@@ -145,4 +147,10 @@ export const FormSubmitButton = styled.button`
   background-color: orangered;
   color: white;
   border: 2px solid orangered;
+
+  &:disabled {
+    cursor: default;
+
+    background-color: rgb(40, 40, 40);
+  }
 `

@@ -15,12 +15,15 @@ interface FormValues {
 interface IFormScreen {}
 
 const FormScreen = ({}: IFormScreen) => {
-  const { control, handleSubmit, watch } = useForm<FormValues>()
+  const { control, handleSubmit, watch, reset, formState } =
+    useForm<FormValues>()
   const navigate = useNavigate()
 
   const [filledQuestionsCount, setFilledQuestionsCount] = useState(0)
 
   const formValues = watch()
+
+  const { isValid } = formState
 
   useEffect(() => {
     const filledCount = Object.values(formValues).filter(Boolean).length
@@ -28,11 +31,24 @@ const FormScreen = ({}: IFormScreen) => {
   }, [formValues])
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
+    let correctAnswersCount = 0
+
+    questionsData.forEach((question) => {
+      if (data[question.questionId] === question.questionAnswer) {
+        correctAnswersCount++
+      }
+    })
+
+    const totalQuestions = questionsData.length
+    alert(`Você acertou ${correctAnswersCount}/${totalQuestions} questões.`)
+    reset()
+
     console.log(data)
-    // navigate('/resultado');
   }
 
   const progressPercentage = (filledQuestionsCount / questionsData.length) * 100
+
+  const submitDisabled = !isValid
 
   return (
     <S.FormScreen>
@@ -68,7 +84,7 @@ const FormScreen = ({}: IFormScreen) => {
           </S.FormWrapper>
         ))}
         <S.FormFooter>
-          <S.FormSubmitButton type="submit">
+          <S.FormSubmitButton type="submit" disabled={submitDisabled}>
             Enviar 🔥 e ver resultado ✅
           </S.FormSubmitButton>
         </S.FormFooter>
