@@ -3,7 +3,7 @@ import * as S from './styles'
 interface IFormScreen {}
 
 const FormScreen = ({}: IFormScreen) => {
-  return <S.FormScreen>Oii 😃🌋</S.FormScreen>
+  return <S.FormScreen>😃🌋</S.FormScreen>
 }
 
 export default FormScreen

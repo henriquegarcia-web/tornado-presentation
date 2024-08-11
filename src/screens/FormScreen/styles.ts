@@ -6,8 +6,8 @@ export const FormScreen = styled(Screen)`
   justify-content: center;
   align-items: center;
 
-  font-size: 22px;
-  line-height: 22px;
+  font-size: 30px;
+  line-height: 30px;
   font-weight: 600;
   color: white;
 
