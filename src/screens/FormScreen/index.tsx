@@ -53,14 +53,14 @@ const FormScreen = ({}: IFormScreen) => {
   return (
     <S.FormScreen>
       <S.FormHeader>
-        <h1>Questionário sobre Vulcões</h1>
+        <h1>Questionário sobre Furacões</h1>
 
         <S.FormProgressbarWrapper>
           <span>🗻</span>
           <S.FormProgressbar>
             <S.FormProgressbarFile width={progressPercentage} />
           </S.FormProgressbar>
-          <span>🌋</span>
+          <span>🌪</span>
         </S.FormProgressbarWrapper>
       </S.FormHeader>
       <S.Form onSubmit={handleSubmit(onSubmit)}>
@@ -85,7 +85,7 @@ const FormScreen = ({}: IFormScreen) => {
         ))}
         <S.FormFooter>
           <S.FormSubmitButton type="submit" disabled={submitDisabled}>
-            Enviar 🔥 e ver resultado ✅
+            Enviar 🌪 e ver resultado ✅🎉
           </S.FormSubmitButton>
         </S.FormFooter>
       </S.Form>
