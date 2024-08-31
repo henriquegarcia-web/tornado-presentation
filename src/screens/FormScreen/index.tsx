@@ -123,9 +123,9 @@ const FormResultModal = ({ result, handleCloseModal }: IFormResultModal) => {
     <>
       <S.FormResultModal>
         <S.ModalWrapper>
-          <S.ModalHeaderClose onClick={handleCloseModal}>
+          {/* <S.ModalHeaderClose onClick={handleCloseModal}>
             <FiX />
-          </S.ModalHeaderClose>
+          </S.ModalHeaderClose> */}
           <S.ModalResultMessageTitle>
             {result >= 7
               ? 'Parabéns! 🥳'
@@ -136,11 +136,11 @@ const FormResultModal = ({ result, handleCloseModal }: IFormResultModal) => {
           <S.ModalResultMessage>
             Você acertou <b>{result}</b> de <b>8 perguntas</b>
           </S.ModalResultMessage>
-          <S.ModalFooter>
-            <S.ModalSubmitButton onClick={handleCloseModal}>
-              Fazer questionário novamente
-            </S.ModalSubmitButton>
-          </S.ModalFooter>
+          {/* <S.ModalFooter>
+          </S.ModalFooter> */}
+          <S.ModalSubmitButton onClick={handleCloseModal}>
+            Fazer questionário novamente
+          </S.ModalSubmitButton>
         </S.ModalWrapper>
       </S.FormResultModal>
 

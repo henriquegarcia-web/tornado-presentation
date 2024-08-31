@@ -118,7 +118,7 @@ export const FormWrapper = styled.div`
 
 export const FormWrapperLabel = styled.label`
   font-size: 18px;
-  line-height: 18px;
+  line-height: 24px;
   font-weight: 500;
   letter-spacing: 0.5px;
 
@@ -236,7 +236,7 @@ export const ModalWrapper = styled.div`
   width: 100%;
   max-width: 340px;
   height: fit-content;
-  padding: 40px 30px;
+  padding: 35px 30px 30px 30px;
   border-radius: 8px;
 
   background-color: rgba(255, 255, 255, 1);
@@ -245,7 +245,7 @@ export const ModalWrapper = styled.div`
 export const ModalResultMessageTitle = styled.h2`
   font-size: 28px;
   line-height: 28px;
-  font-weight: 700;
+  font-weight: 800;
 
   color: rgba(0, 0, 0, 0.8);
 `
@@ -277,6 +277,12 @@ export const ModalFooter = styled.div`
 `
 
 export const ModalSubmitButton = styled(FormSubmitButton)`
+  position: absolute;
+  z-index: 1200;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+
   font-size: 14px;
   line-height: 14px;
 `
